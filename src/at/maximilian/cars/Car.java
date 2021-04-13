@@ -1,6 +1,6 @@
 package at.maximilian.cars;
 
-public class Car extends Vehicle{
+public class Car{
     private String brand;
     private String color;
     private String serialNumb;
@@ -14,7 +14,7 @@ public class Car extends Vehicle{
         this.serialNumb = serialNumb;
         this.price = price;
         this.mileage = mileage;
-    }
+    }    
     //Getter
     public String getBrand() {
         return brand;
@@ -35,4 +35,8 @@ public class Car extends Vehicle{
     public int getMileage() {
         return mileage;
     }
+
+
+
+
 }

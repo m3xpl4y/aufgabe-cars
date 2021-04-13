@@ -9,6 +9,8 @@ public class Mirror {
         this.position = position;
         this.size = size;
     }
+    //Functions
+
     //Getter
     public int getPosition() {
         return position;
