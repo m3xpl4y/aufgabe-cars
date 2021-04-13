@@ -5,16 +5,16 @@ public class Car extends Vehicle{
     private String color;
     private String serialNumb;
     private int price;
+    private int mileage;
 
     //Constructor
-
-    public Car(String brand, String color, String serialNumb, int price) {
+    public Car(String brand, String color, String serialNumb, int price, int mileage) {
         this.brand = brand;
         this.color = color;
         this.serialNumb = serialNumb;
         this.price = price;
+        this.mileage = mileage;
     }
-
     //Getter
     public String getBrand() {
         return brand;
@@ -30,5 +30,9 @@ public class Car extends Vehicle{
 
     public int getPrice() {
         return price;
+    }
+
+    public int getMileage() {
+        return mileage;
     }
 }
