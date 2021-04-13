@@ -1,5 +1,7 @@
 package at.maximilian.cars;
 
+import java.util.List;
+
 public class Vehicle {
     private double restFuel;
     private double drivenKM;
@@ -10,7 +12,8 @@ public class Vehicle {
     private FuelTank fuelTank;
     private Producer producer;
     private Trunk trunk;
-    private Tire tires;
-    private Mirror mirrors;
+    private List<Tire> tires;
+    private List<Mirror> mirrors;
+
 
 }
