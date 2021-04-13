@@ -63,7 +63,55 @@ public class Vehicle {
         this.seats = seats;
     }
 
+    public Car getCar() {
+        return car;
+    }
 
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public FuelTank getFuelTank() {
+        return fuelTank;
+    }
+
+    public void setFuelTank(FuelTank fuelTank) {
+        this.fuelTank = fuelTank;
+    }
+
+    public Producer getProducer() {
+        return producer;
+    }
+
+    public void setProducer(Producer producer) {
+        this.producer = producer;
+    }
+
+    public Trunk getTrunk() {
+        return trunk;
+    }
+
+    public void setTrunk(Trunk trunk) {
+        this.trunk = trunk;
+    }
+
+    public List<Tire> getTires() {
+        return tires;
+    }
+
+    public void setTires(List<Tire> tires) {
+        this.tires = tires;
+    }
+
+    
     
     
 }

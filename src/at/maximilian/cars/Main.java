@@ -24,6 +24,10 @@ public class Main {
         v1.addTire(tire2);
         v1.addTire(tire3);
         v1.addTire(tire4);
-        t1.getTrunkCapacity();
+        System.out.println("Spiegel 1 größe " + v1.getMirrors().get(0).getSize());
+        System.out.println("Herkunftsland: " + v1.getProducer().getOrigin());
+        System.out.println(c1.getSerialNumb());
+        
+
     }
 }
