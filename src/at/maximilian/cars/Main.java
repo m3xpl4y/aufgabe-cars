@@ -3,11 +3,13 @@ package at.maximilian.cars;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import at.maximilian.cars.Engine.TYPE;
+
 public class Main {
 
     public static void main(String[] args) {
         Car c1 =  new Car("BMW", "Black", "DX44756", 25000, 280000);
-        Engine e1 = new Engine(150);
+        Engine e1 = new Engine(150, TYPE.DIESEL);
         FuelTank f1 = new FuelTank(65, 7.8);
         Producer p1 = new Producer("BMW", "Germany", 17);
         Trunk t1 = new Trunk(450);
@@ -24,10 +26,11 @@ public class Main {
         v1.addTire(tire2);
         v1.addTire(tire3);
         v1.addTire(tire4);
+
         System.out.println("Spiegel 1 größe " + v1.getMirrors().get(0).getSize());
         System.out.println("Herkunftsland: " + v1.getProducer().getOrigin());
-        System.out.println(c1.getSerialNumb());
-        
+        System.out.println(v1.getEngine().getType());
+        System.out.println(c1.getSerialNumb());        
 
     }
 }

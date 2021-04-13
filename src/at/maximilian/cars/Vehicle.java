@@ -8,7 +8,8 @@ public class Vehicle {
     private double drivenKM;
     private int constructionYear;
     private int seats;
-    private enum DRIVER_LICENCE{A,B,C}
+    public enum DRIVER_LICENCE{A,B,C}
+    private DRIVER_LICENCE driverLicence;
 
     private Car car;
     private Engine engine;
