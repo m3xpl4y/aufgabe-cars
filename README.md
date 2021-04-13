@@ -1,2 +1,3 @@
 # aufgabe-cars
-Objektorientierung, Auto in Einzelteile in verschiedenen Klassen aufteilen.
+Objektorientierung. 
+Auto in Einzelteile und in verschiedenen Klassen aufteilen.
