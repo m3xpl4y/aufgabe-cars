@@ -4,12 +4,15 @@ public class Car extends Vehicle{
     private String brand;
     private String color;
     private String serialNumb;
+    private int price;
 
     //Constructor
-    public Car(String brand, String color, String serialNumb) {
+
+    public Car(String brand, String color, String serialNumb, int price) {
         this.brand = brand;
         this.color = color;
         this.serialNumb = serialNumb;
+        this.price = price;
     }
 
     //Getter
@@ -23,5 +26,9 @@ public class Car extends Vehicle{
 
     public String getSerialNumb() {
         return serialNumb;
+    }
+
+    public int getPrice() {
+        return price;
     }
 }
