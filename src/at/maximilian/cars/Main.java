@@ -1,7 +1,7 @@
 package at.maximilian.cars;
 
 import at.maximilian.cars.Engine.TYPE;
-import at.maximilian.cars.Constructor;
+import at.maximilian.cars.ConstructorHelper.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,9 +31,6 @@ public class Main {
         Vehicle v1 = new Vehicle(2013,  5, Vehicle.DRIVER_LICENCE.B, c1, e1, f1, p1, t1, mirrorList, tireList);
 
         Constructor.CreateVehicle(v1, e1, f1);
-
-//        e1.setVehicle(v1);
-//        e1.setFuelTank(f1);
 
         System.out.println(v1.getTires().get(0).getType());
         System.out.println(v1.getTires().toString());
