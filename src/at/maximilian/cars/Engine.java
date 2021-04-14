@@ -41,10 +41,6 @@ public class Engine {
     }
     public void drive(int km) {
         double consummation = vehicle.getFuelTank().getFuelConsummation() / 100;
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Geschwindigkeit Eingeben: ");
-//        double speed = sc.nextDouble();
-//        accelerate(speed);
         for (int i = 0; i < km; i++) {
             vehicle.setDrivenKM(i);
             vehicle.setRestFuel(vehicle.getFuelTank().getFuelCapacity()-(i*consummation));
