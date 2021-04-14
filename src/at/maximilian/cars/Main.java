@@ -15,13 +15,15 @@ public class Main {
         FuelTank f1 = new FuelTank(65, 7.8);
         Producer p1 = new Producer("BMW", "Germany", 17);
         Trunk t1 = new Trunk(450);
-        Mirror m1 = new Mirror(-70, 20);
-        Mirror m2 =  new Mirror(70, 20);
+        Mirror m1 = new Mirror(-70, Mirror.POSITION.LINKS);
+        Mirror m2 =  new Mirror(70, Mirror.POSITION.RECHTS);
         Tire tire1 = new Tire("Firestone", 225, 50, 18, Tire.TYPE.SUMMER);
         Tire tire2 = new Tire("Firestone", 225, 50, 18, Tire.TYPE.SUMMER);
         Tire tire3 = new Tire("Firestone", 225, 50, 18, Tire.TYPE.SUMMER);
         Tire tire4 = new Tire("Firestone", 225, 50, 18, Tire.TYPE.SUMMER);
         List<Mirror> mirrorList = new ArrayList<>();
+        mirrorList.add(m1);
+        mirrorList.add(m2);
         List<Tire> tireList = new ArrayList<>();
         tireList.add(tire1);
         tireList.add(tire2);
@@ -33,7 +35,7 @@ public class Main {
         Constructor.CreateVehicle(v1, e1, f1);
 
         System.out.println(v1.getTires().get(0).getType());
-        System.out.println(v1.getTires().toString());
+        System.out.println(v1.getMirrors().get(0).getPosition());
         v1.getEngine().drive(1235);
     }
 }

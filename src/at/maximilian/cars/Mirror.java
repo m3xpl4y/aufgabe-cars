@@ -1,18 +1,21 @@
 package at.maximilian.cars;
 
 public class Mirror {
-    private int position;
     private int size;
+    public enum POSITION {LINKS,MITTE,RECHTS}
+    private POSITION position;
 
     //Constructor
-    public Mirror(int position, int size) {
-        this.position = position;
+
+    public Mirror(int size, POSITION position) {
         this.size = size;
+        this.position = position;
     }
+
     //Functions
 
     //Getter
-    public int getPosition() {
+    public POSITION getPosition() {
         return position;
     }
 
