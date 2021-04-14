@@ -19,24 +19,33 @@ public class Car{
     public String getBrand() {
         return brand;
     }
-
     public String getColor() {
         return color;
     }
-
     public String getSerialNumb() {
         return serialNumb;
     }
-
     public int getPrice() {
         return price;
     }
-
     public int getMileage() {
         return mileage;
     }
 
-
-
-
+    //Setter
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+    public void setColor(String color) {
+        this.color = color;
+    }
+    public void setSerialNumb(String serialNumb) {
+        this.serialNumb = serialNumb;
+    }
+    public void setPrice(int price) {
+        this.price = price;
+    }
+    public void setMileage(int mileage) {
+        this.mileage = mileage;
+    }
 }

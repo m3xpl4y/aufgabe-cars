@@ -5,6 +5,9 @@ public class Engine {
     public enum TYPE {DIESEL, GAS}
     private TYPE type;
 
+    private FuelTank fuelTank;
+    private Vehicle vehicle;
+
     //Constructor
     public Engine(int horsePower, TYPE type) {
         this.horsePower = horsePower;
@@ -14,19 +17,95 @@ public class Engine {
     public int getHorsePower() {
         return horsePower;
     }
-    public void setHorsePower(int horsePower) {
-        this.horsePower = horsePower;
-    }
-    
-    //Functions
-    public void drive(int speed)
-    {
-        System.out.println("Der Motor läuft mit " + speed);
-    }
     public TYPE getType() {
         return type;
     }
+    // Setter
+    public void setHorsePower(int horsePower) {
+        this.horsePower = horsePower;
+    }
     public void setType(TYPE type) {
         this.type = type;
+    }
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+    public void setFuelTank(FuelTank fuelTank) {
+        this.fuelTank = fuelTank;
+    }
+
+    //Functions
+    public int speed(int speed)
+    {
+        return speed;
+    }
+    public void drive(int km) {
+        double consummation = vehicle.getFuelTank().getFuelConsummation() / 100;
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Geschwindigkeit Eingeben: ");
+//        double speed = sc.nextDouble();
+//        accelerate(speed);
+        for (int i = 0; i < km; i++) {
+            vehicle.setDrivenKM(i);
+            vehicle.setRestFuel(vehicle.getFuelTank().getFuelCapacity()-(i*consummation));
+
+            if(vehicle.getRestFuel() < consummation)
+                break;
+        }
+        if (vehicle.getRestFuel() > consummation){
+            System.out.println("Willkommen in Valhalla");
+            System.out.println("Du bist " + vehicle.getDrivenKM() +" Kilometer gefahren");
+            System.out.println("Der durchschnittsverbrauch lag bei " + vehicle.getFuelTank().getFuelConsummation() +".");
+            System.out.println("Tankinhalt: " + vehicle.getRestFuel());
+            System.out.println("Tankinhalt beim start: " + vehicle.getFuelTank().getRestFuelCapacity());
+        }
+        if(vehicle.getRestFuel() < consummation)
+        {
+            double restKM = km - vehicle.getDrivenKM();
+            double neededFuel = restKM * consummation;
+            System.out.println("Du bist " + vehicle.getDrivenKM() +" Kilometer gefahren");
+            System.out.println("Verbleidender Tankinhalt: " + vehicle.getRestFuel());
+            System.out.println("Tankinhalt beim start: " + fuelTank.getFuelCapacity());
+            System.out.println("Ihr Treibstoff reicht nicht um die gesamte Reststrecke von " + restKM + " Kilometer zu fahren!");
+            System.out.println("Sie müssen noch mindestens " + neededFuel + " Liter Treibstoff tanken!");
+            System.out.println(consummation + " verbrauch");
+        }
+    }
+    public double accelerate(double speed) {
+        double consummation1 = vehicle.getFuelTank().getFuelConsummation();
+        if(speed < 1)
+        {
+            consummation1 = 0;
+        }
+        else if(speed >=1 && speed <= 60)
+        {
+            double percentage = (int)consummation1*(25.0f/100.0f);
+            consummation1 = consummation1 - percentage;
+        }
+        else if(speed >= 61 && speed <= 90)
+        {
+            double percentage = (int)consummation1*(15.0f/100.0f);
+            consummation1 = consummation1 - percentage;
+        }
+        else if(speed >= 91 && speed <= 130)
+        {
+            double percentage = (int)consummation1*(100.0f/100.0f);
+            consummation1 = percentage;
+        }
+        else  if(speed >= 131 && speed <= 180)
+        {
+            double percentage = (int)consummation1*(15.0f/100.0f);
+            consummation1 = consummation1 + percentage;
+        }
+        else if(speed >= 181 && speed <= 250)
+        {
+            double percentage = (int)consummation1*(25.0f/100.0f);
+            consummation1 = consummation1 + percentage;
+        }
+        else
+        {
+            consummation1 = 2000;
+        }
+        return consummation1;
     }
 }
