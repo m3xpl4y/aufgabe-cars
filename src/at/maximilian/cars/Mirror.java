@@ -18,8 +18,15 @@ public class Mirror {
     public POSITION getPosition() {
         return position;
     }
-
     public int getSize() {
         return size;
+    }
+
+    //Setter
+    public void setSize(int size) {
+        this.size = size;
+    }
+    public void setPosition(POSITION position) {
+        this.position = position;
     }
 }

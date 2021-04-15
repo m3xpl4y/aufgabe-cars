@@ -4,7 +4,7 @@ public class Engine {
     private int horsePower;
     public enum TYPE {DIESEL, GAS}
     private TYPE type;
-
+    private int speed =0;
     private FuelTank fuelTank;
     private Vehicle vehicle;
 
@@ -35,13 +35,17 @@ public class Engine {
     }
 
     //Functions
-    public int speed(int speed)
+    public int setSpeed(int speed)
     {
+        this.speed = speed;
         return speed;
     }
     public void drive(int km) {
-        double consummation = vehicle.getFuelTank().getFuelConsummation() / 100;
-        for (int i = 0; i < km; i++) {
+
+        accelerate(this.speed);
+
+        double consummation = vehicle.getFuelTank().getFuelConsummation()/ 100;
+        for (int i = 0; i <= km; i++) {
             vehicle.setDrivenKM(i);
             vehicle.setRestFuel(vehicle.getFuelTank().getFuelCapacity()-(i*consummation));
 
@@ -53,7 +57,7 @@ public class Engine {
             System.out.println("Du bist " + vehicle.getDrivenKM() +" Kilometer gefahren");
             System.out.println("Der durchschnittsverbrauch lag bei " + vehicle.getFuelTank().getFuelConsummation() +".");
             System.out.println("Tankinhalt: " + vehicle.getRestFuel());
-            System.out.println("Tankinhalt beim start: " + vehicle.getFuelTank().getRestFuelCapacity());
+            System.out.println("Tankinhalt beim start: " + vehicle.getFuelTank().getFuelCapacity());
         }
         if(vehicle.getRestFuel() < consummation)
         {
@@ -67,7 +71,7 @@ public class Engine {
             System.out.println(consummation + " verbrauch");
         }
     }
-    public double accelerate(double speed) {
+    public void accelerate(int speed) {
         double consummation1 = vehicle.getFuelTank().getFuelConsummation();
         if(speed < 1)
         {
@@ -75,33 +79,32 @@ public class Engine {
         }
         else if(speed >=1 && speed <= 60)
         {
-            double percentage = (int)consummation1*(25.0f/100.0f);
+            double percentage = consummation1*(25.0f/100.0f);
             consummation1 = consummation1 - percentage;
         }
         else if(speed >= 61 && speed <= 90)
         {
-            double percentage = (int)consummation1*(15.0f/100.0f);
+            double percentage = consummation1*(15.0f/100.0f);
             consummation1 = consummation1 - percentage;
         }
         else if(speed >= 91 && speed <= 130)
         {
-            double percentage = (int)consummation1*(100.0f/100.0f);
-            consummation1 = percentage;
+            consummation1 = vehicle.getFuelTank().getFuelConsummation();
         }
         else  if(speed >= 131 && speed <= 180)
         {
-            double percentage = (int)consummation1*(15.0f/100.0f);
+            double percentage = consummation1*(15.0f/100.0f);
             consummation1 = consummation1 + percentage;
         }
         else if(speed >= 181 && speed <= 250)
         {
-            double percentage = (int)consummation1*(25.0f/100.0f);
+            double percentage = consummation1*(25.0f/100.0f);
             consummation1 = consummation1 + percentage;
         }
         else
         {
             consummation1 = 2000;
         }
-        return consummation1;
+        vehicle.getFuelTank().setFuelConsummation(consummation1);
     }
 }

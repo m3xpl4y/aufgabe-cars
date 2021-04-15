@@ -16,12 +16,21 @@ public class Producer {
     public String getCompanyName() {
         return companyName;
     }
-
     public String getOrigin() {
         return origin;
     }
-
     public int getDiscount() {
         return discount;
+    }
+
+    //Setter
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+    public void setDiscount(int discount) {
+        this.discount = discount;
     }
 }
