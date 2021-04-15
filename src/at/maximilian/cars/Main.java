@@ -34,11 +34,12 @@ public class Main {
 
         Vehicle v1 = new Vehicle(2013,  5, Vehicle.DRIVER_LICENCE.B, c1, e1, f1, p1, t1, mirrorList, tireList);
 
-        ConstructorHelper.CreateVehicle(v1, e1, f1,t1, tireList, mirrorList, p1);
+        ConstructorHelper.CreateVehicle(v1,c1, e1, f1,t1, tireList, mirrorList, p1);
 
         System.out.println("Bitte Geschindigkeit eingeben");
         int speed = sc.nextInt();
         v1.getEngine().setSpeed(speed);
+        v1.getFuelTank().checkConsummation();
         v1.getEngine().drive(100); //gibt die geschwindigkeit aus!
         System.out.println(v1.getTires().get(0).getType());
         System.out.println(v1.getProducer().getCompanyName());

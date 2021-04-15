@@ -6,6 +6,7 @@ public class Car{
     private String serialNumb;
     private int price;
     private int mileage;
+    private FuelTank fuelTank;
 
     //Constructor
     public Car(String brand, String color, String serialNumb, int price, int mileage) {
@@ -31,6 +32,9 @@ public class Car{
     public int getMileage() {
         return mileage;
     }
+    public FuelTank getFuelTank() {
+        return fuelTank;
+    }
 
     //Setter
     public void setBrand(String brand) {
@@ -47,5 +51,8 @@ public class Car{
     }
     public void setMileage(int mileage) {
         this.mileage = mileage;
+    }
+    public void setFuelTank(FuelTank fuelTank) {
+        this.fuelTank = fuelTank;
     }
 }
