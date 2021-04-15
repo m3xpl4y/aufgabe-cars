@@ -40,7 +40,7 @@ public class Main {
         int speed = sc.nextInt();
         v1.getEngine().setSpeed(speed);
         v1.getFuelTank().checkConsummation();
-        v1.getEngine().drive(100); //gibt die geschwindigkeit aus!
+        v1.getEngine().drive(1000); //gibt die geschwindigkeit aus!
         System.out.println(v1.getTires().get(0).getType());
         System.out.println(v1.getProducer().getCompanyName());
         System.out.println(v1.getMirrors().get(0).getPosition());

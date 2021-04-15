@@ -55,8 +55,8 @@ public class Engine {
         if (vehicle.getRestFuel() > consummation){
             System.out.println("Willkommen in Valhalla");
             System.out.println("Du bist " + vehicle.getDrivenKM() +" Kilometer gefahren");
-            System.out.println("Der durchschnittsverbrauch lag bei " + vehicle.getFuelTank().getFuelConsummation() +".");
-            System.out.println("Tankinhalt: " + vehicle.getRestFuel());
+            System.out.printf("Der durchschnittsverbrauch lag bei %.2f. \n", vehicle.getFuelTank().getFuelConsummation());
+            System.out.printf("Tankinhalt: %.2f \n", vehicle.getRestFuel());
             System.out.println("Tankinhalt beim start: " + vehicle.getFuelTank().getFuelCapacity());
         }
         if(vehicle.getRestFuel() < consummation)
@@ -64,11 +64,11 @@ public class Engine {
             double restKM = km - vehicle.getDrivenKM();
             double neededFuel = restKM * consummation;
             System.out.println("Du bist " + vehicle.getDrivenKM() +" Kilometer gefahren");
-            System.out.println("Verbleidender Tankinhalt: " + vehicle.getRestFuel());
+            System.out.printf("Verbleidender Tankinhalt: %.2f\n", vehicle.getRestFuel());
             System.out.println("Tankinhalt beim start: " + fuelTank.getFuelCapacity());
             System.out.println("Ihr Treibstoff reicht nicht um die gesamte Reststrecke von " + restKM + " Kilometer zu fahren!");
-            System.out.println("Sie müssen noch mindestens " + neededFuel + " Liter Treibstoff tanken!");
-            System.out.println(consummation + " verbrauch");
+            System.out.printf("Sie müssen noch mindestens %.2f Liter Treibstoff tanken!\n", neededFuel);
+            System.out.printf("Der durchschnittsverbrauch lag bei %.2f. \n", vehicle.getFuelTank().getFuelConsummation());
         }
     }
     public void accelerate(int speed) {
