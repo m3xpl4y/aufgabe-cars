@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Car c1 =  new Car("BMW", "Black", "DX44756", 25000, 280000);
+        Car c1 =  new Car("BMW", "Black", "DX44756", 25000, 28000);
         Engine e1 = new Engine(150, TYPE.DIESEL);
         FuelTank f1 = new FuelTank(65, 7.8);
         Producer p1 = new Producer("BMW", "Germany", 17);
